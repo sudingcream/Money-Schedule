@@ -10,6 +10,8 @@ import SnapKit
 
 class StartViewController: UIViewController {
     
+    var didSendEventClosure: ((StartViewController.Event) -> Void)?
+
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -56,7 +58,7 @@ class StartViewController: UIViewController {
         button.setTitle("시작하기", for: .normal)
         button.backgroundColor = UIColor(hex: "23AA49", alpha: 1.0)
         button.titleLabel?.textColor = .white
-        button.layer.cornerRadius = 16
+        button.layer.cornerRadius = 22
         button.addTarget(
             self,
             action: #selector(startButtonTapped),
@@ -66,9 +68,13 @@ class StartViewController: UIViewController {
     }()
     
     @objc func startButtonTapped() {
-        let searchViewController = ViewController2()
-        searchViewController.modalPresentationStyle = .fullScreen
-        self.present(searchViewController, animated: true, completion: nil)
+        let contactViewController = ContactViewController()
+        contactViewController.modalPresentationStyle = .fullScreen
+        self.present(
+            contactViewController,
+            animated: true,
+            completion: nil
+        )
     }
     
     override func viewDidLoad() {
@@ -97,7 +103,7 @@ class StartViewController: UIViewController {
         
         subtitleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(titleLabel.snp.bottom).offset(12)
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
         }
         
         logoImageView.snp.makeConstraints { make in
@@ -107,10 +113,18 @@ class StartViewController: UIViewController {
         
         startButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(subtitleLabel.snp.bottom).offset(24)
+            make.top.equalTo(subtitleLabel.snp.bottom).offset(34)
             make.height.equalTo(50)
             make.leading.equalToSuperview().offset(100)
             make.trailing.equalToSuperview().offset(-100)
         }
+    }
+}
+
+extension StartViewController {
+    enum Event {
+        case search
+        case fetchSchedule
+        case fetchMoney
     }
 }
