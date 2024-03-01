@@ -17,6 +17,23 @@
 		C5CA8FFE2B8DCDE5004EE68C /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA8FFD2B8DCDE5004EE68C /* StartViewController.swift */; };
 		C5CA90012B8DCE5D004EE68C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C5CA90002B8DCE5D004EE68C /* SnapKit */; };
 		C5CA90062B8DCF80004EE68C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = C5CA90052B8DCF80004EE68C /* Then */; };
+		C5CA90112B8DE2D2004EE68C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA90102B8DE2D2004EE68C /* AppCoordinator.swift */; };
+		C5CA90182B8DE9CA004EE68C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA90172B8DE9CA004EE68C /* HomeViewController.swift */; };
+		C5CA901C2B8DEE13004EE68C /* MoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA901B2B8DEE13004EE68C /* MoneyViewController.swift */; };
+		C5CA901E2B8DEE3D004EE68C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA901D2B8DEE3D004EE68C /* SettingViewController.swift */; };
+		C5CA90302B8ED30A004EE68C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA902F2B8ED30A004EE68C /* LoginViewController.swift */; };
+		C5CA90322B8ED314004EE68C /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA90312B8ED314004EE68C /* LoginCoordinator.swift */; };
+		C5CA90352B8EFD42004EE68C /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA90342B8EFD42004EE68C /* ContactViewController.swift */; };
+		C5CA90382B8F0B7A004EE68C /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA90372B8F0B7A004EE68C /* ConnectViewController.swift */; };
+		C5CA903E2B901363004EE68C /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA903D2B901363004EE68C /* CustomTabBarController.swift */; };
+		C5CA90402B90147B004EE68C /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA903F2B90147B004EE68C /* CalendarViewController.swift */; };
+		C5CA90432B904378004EE68C /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = C5CA90422B904378004EE68C /* FSCalendar */; };
+		C5CA90452B90472E004EE68C /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA90442B90472E004EE68C /* TabItem.swift */; };
+		C5CA90472B90478E004EE68C /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA90462B90478E004EE68C /* CustomTabBar.swift */; };
+		C5CA90492B9047AC004EE68C /* UIControl+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA90482B9047AC004EE68C /* UIControl+.swift */; };
+		C5CA904B2B9047C1004EE68C /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA904A2B9047C1004EE68C /* UIImage+.swift */; };
+		C5CA90522B9049A4004EE68C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C5CA90512B9049A4004EE68C /* RxCocoa */; };
+		C5CA90562B9049A4004EE68C /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = C5CA90552B9049A4004EE68C /* RxRelay */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +47,20 @@
 		C5CA8FF12B8DCB6C004EE68C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5CA8FF72B8DCC61004EE68C /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		C5CA8FFD2B8DCDE5004EE68C /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		C5CA90102B8DE2D2004EE68C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		C5CA90172B8DE9CA004EE68C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C5CA901B2B8DEE13004EE68C /* MoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyViewController.swift; sourceTree = "<group>"; };
+		C5CA901D2B8DEE3D004EE68C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		C5CA902F2B8ED30A004EE68C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C5CA90312B8ED314004EE68C /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		C5CA90342B8EFD42004EE68C /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		C5CA90372B8F0B7A004EE68C /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		C5CA903D2B901363004EE68C /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		C5CA903F2B90147B004EE68C /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		C5CA90442B90472E004EE68C /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		C5CA90462B90478E004EE68C /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		C5CA90482B9047AC004EE68C /* UIControl+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+.swift"; sourceTree = "<group>"; };
+		C5CA904A2B9047C1004EE68C /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,8 +68,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5CA90522B9049A4004EE68C /* RxCocoa in Frameworks */,
 				C5CA90012B8DCE5D004EE68C /* SnapKit in Frameworks */,
+				C5CA90432B904378004EE68C /* FSCalendar in Frameworks */,
 				C5CA90062B8DCF80004EE68C /* Then in Frameworks */,
+				C5CA90562B9049A4004EE68C /* RxRelay in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +98,9 @@
 		C5CA8FE22B8DCB6A004EE68C /* Money-Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				C5CA901F2B8DF25D004EE68C /* Application */,
+				C5CA90122B8DE393004EE68C /* Coordinator */,
+				C5CA90072B8DD52D004EE68C /* TabBar */,
 				C5CA8FFC2B8DCCF6004EE68C /* View */,
 				C5CA8FF92B8DCC6A004EE68C /* Extension */,
 				C5CA8FE32B8DCB6A004EE68C /* AppDelegate.swift */,
@@ -81,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				C5CA8FF72B8DCC61004EE68C /* UIColor+.swift */,
+				C5CA90482B9047AC004EE68C /* UIControl+.swift */,
+				C5CA904A2B9047C1004EE68C /* UIImage+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -88,9 +127,66 @@
 		C5CA8FFC2B8DCCF6004EE68C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C5CA90362B8F0B48004EE68C /* Connect */,
+				C5CA90332B8EFD36004EE68C /* Contact */,
+				C5CA902E2B8ED2FF004EE68C /* Start */,
 				C5CA8FFD2B8DCDE5004EE68C /* StartViewController.swift */,
+				C5CA90172B8DE9CA004EE68C /* HomeViewController.swift */,
+				C5CA901B2B8DEE13004EE68C /* MoneyViewController.swift */,
+				C5CA901D2B8DEE3D004EE68C /* SettingViewController.swift */,
+				C5CA903F2B90147B004EE68C /* CalendarViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C5CA90072B8DD52D004EE68C /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C5CA903D2B901363004EE68C /* CustomTabBarController.swift */,
+				C5CA90442B90472E004EE68C /* TabItem.swift */,
+				C5CA90462B90478E004EE68C /* CustomTabBar.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		C5CA90122B8DE393004EE68C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		C5CA901F2B8DF25D004EE68C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C5CA90102B8DE2D2004EE68C /* AppCoordinator.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		C5CA902E2B8ED2FF004EE68C /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				C5CA902F2B8ED30A004EE68C /* LoginViewController.swift */,
+				C5CA90312B8ED314004EE68C /* LoginCoordinator.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		C5CA90332B8EFD36004EE68C /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				C5CA90342B8EFD42004EE68C /* ContactViewController.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		C5CA90362B8F0B48004EE68C /* Connect */ = {
+			isa = PBXGroup;
+			children = (
+				C5CA90372B8F0B7A004EE68C /* ConnectViewController.swift */,
+			);
+			path = Connect;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +208,9 @@
 			packageProductDependencies = (
 				C5CA90002B8DCE5D004EE68C /* SnapKit */,
 				C5CA90052B8DCF80004EE68C /* Then */,
+				C5CA90422B904378004EE68C /* FSCalendar */,
+				C5CA90512B9049A4004EE68C /* RxCocoa */,
+				C5CA90552B9049A4004EE68C /* RxRelay */,
 			);
 			productName = "Money-Schedule";
 			productReference = C5CA8FE02B8DCB6A004EE68C /* Money-Schedule.app */;
@@ -144,6 +243,8 @@
 			packageReferences = (
 				C5CA8FFF2B8DCE5D004EE68C /* XCRemoteSwiftPackageReference "SnapKit" */,
 				C5CA90042B8DCF80004EE68C /* XCRemoteSwiftPackageReference "Then" */,
+				C5CA90412B904378004EE68C /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				C5CA904C2B9049A4004EE68C /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = C5CA8FE12B8DCB6A004EE68C /* Products */;
 			projectDirPath = "";
@@ -172,10 +273,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5CA90402B90147B004EE68C /* CalendarViewController.swift in Sources */,
+				C5CA90112B8DE2D2004EE68C /* AppCoordinator.swift in Sources */,
+				C5CA90382B8F0B7A004EE68C /* ConnectViewController.swift in Sources */,
+				C5CA901E2B8DEE3D004EE68C /* SettingViewController.swift in Sources */,
+				C5CA904B2B9047C1004EE68C /* UIImage+.swift in Sources */,
+				C5CA901C2B8DEE13004EE68C /* MoneyViewController.swift in Sources */,
 				C5CA8FFE2B8DCDE5004EE68C /* StartViewController.swift in Sources */,
+				C5CA90302B8ED30A004EE68C /* LoginViewController.swift in Sources */,
 				C5CA8FE82B8DCB6A004EE68C /* ViewController.swift in Sources */,
 				C5CA8FF82B8DCC61004EE68C /* UIColor+.swift in Sources */,
+				C5CA903E2B901363004EE68C /* CustomTabBarController.swift in Sources */,
+				C5CA90492B9047AC004EE68C /* UIControl+.swift in Sources */,
+				C5CA90322B8ED314004EE68C /* LoginCoordinator.swift in Sources */,
+				C5CA90352B8EFD42004EE68C /* ContactViewController.swift in Sources */,
+				C5CA90472B90478E004EE68C /* CustomTabBar.swift in Sources */,
 				C5CA8FE42B8DCB6A004EE68C /* AppDelegate.swift in Sources */,
+				C5CA90182B8DE9CA004EE68C /* HomeViewController.swift in Sources */,
+				C5CA90452B90472E004EE68C /* TabItem.swift in Sources */,
 				C5CA8FE62B8DCB6A004EE68C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,7 +451,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,7 +480,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,6 +534,22 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		C5CA90412B904378004EE68C /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
+		C5CA904C2B9049A4004EE68C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -431,6 +562,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C5CA90042B8DCF80004EE68C /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		C5CA90422B904378004EE68C /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5CA90412B904378004EE68C /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+		C5CA90512B9049A4004EE68C /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5CA904C2B9049A4004EE68C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		C5CA90552B9049A4004EE68C /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5CA904C2B9049A4004EE68C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

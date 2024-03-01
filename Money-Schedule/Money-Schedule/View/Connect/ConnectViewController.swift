@@ -42,7 +42,7 @@ class ConnectViewController: UIViewController {
     private lazy var myCodeTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.text = "나의 코드"
         label.numberOfLines = 3
         label.textAlignment = .center
@@ -64,7 +64,7 @@ class ConnectViewController: UIViewController {
     private lazy var opponentCodeTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.text = "상대방 코드"
         label.numberOfLines = 3
         label.textAlignment = .center
@@ -100,7 +100,7 @@ class ConnectViewController: UIViewController {
     }()
     
     @objc func aloneStartButtonTapped() {
-        let homeViewController = HomeViewController()
+        let homeViewController = CustomTabBarController()
         homeViewController.modalPresentationStyle = .fullScreen
         self.present(
             homeViewController,
@@ -125,19 +125,28 @@ class ConnectViewController: UIViewController {
     }()
     
     @objc func startButtonTapped() {
-        let homeViewController = HomeViewController()
-        homeViewController.modalPresentationStyle = .fullScreen
+        let customTabBarController = CustomTabBarController()
+        customTabBarController.modalPresentationStyle = .fullScreen
         self.present(
-            homeViewController,
+            customTabBarController,
             animated: true,
             completion: nil
         )
+    }
+
+    @objc private func dismissKeyboard() {
+         view.endEditing(true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupConfigure()
-        addUnderlineToButton()
+        addUnderlineToButton()  
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
+        opponentCodeTextField.delegate = self
     }
     
     private func setupConfigure() {
@@ -218,4 +227,15 @@ extension ConnectViewController {
         )
         aloneStartButton.setAttributedTitle(attributedString, for: .normal)
     }
+}
+
+extension ConnectViewController: UITextFieldDelegate {
+     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+         if textField == opponentCodeTextField {
+             guard let text = textField.text else { return true }
+             let newLength = text.count + string.count - range.length
+             return newLength <= 5
+         }
+         return true
+     }
 }

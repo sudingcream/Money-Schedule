@@ -103,9 +103,15 @@ class ContactViewController: UIViewController, UITextFieldDelegate {
         return label
     }()
     
+    @objc private func dismissKeyboard() {
+         view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupConfigure()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
         phonenumberTextField.delegate = self
         view.backgroundColor = .white
     }

@@ -1,17 +1,16 @@
 //
-//  StartViewController.swift
+//  LoginViewController.swift
 //  Money-Schedule
 //
-//  Created by betty on 2024/02/27.
+//  Created by betty on 2024/02/28.
 //
 
 import UIKit
-import SnapKit
 
-class StartViewController: UIViewController {
+class LoginViewController: UIViewController {
+
+    var didSendEventClosure: ((LoginViewController.Event) -> Void)?
     
-    var didSendEventClosure: ((StartViewController.Event) -> Void)?
-
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -52,43 +51,27 @@ class StartViewController: UIViewController {
         return imageView
     }()
     
-    private let startButton: UIButton = {
+    private let loginButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("시작하기", for: .normal)
-        button.backgroundColor = UIColor(hex: "23AA49", alpha: 1.0)
-        button.titleLabel?.textColor = .white
-        button.layer.cornerRadius = 22
-        button.addTarget(
-            self,
-            action: #selector(startButtonTapped),
-            for: .touchUpInside
-        )
+        button.setTitle("시작하기 - loginview", for: .normal)
+        button.backgroundColor = .systemBlue
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 8.0
+        
         return button
     }()
     
-    @objc func startButtonTapped() {
-        let contactViewController = ContactViewController()
-        contactViewController.modalPresentationStyle = .fullScreen
-        self.present(
-            contactViewController,
-            animated: true,
-            completion: nil
-        )
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLayout()
-    }
-    
-    private func setupLayout() {
+        view.backgroundColor = .red
+        
         view.addSubview(backgroundImageView)
         view.addSubview(titleLabel)
         view.addSubview(subtitleLabel)
         view.addSubview(logoImageView)
-        view.addSubview(startButton)
-        
+        view.addSubview(loginButton)
+
         backgroundImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
@@ -103,7 +86,7 @@ class StartViewController: UIViewController {
         
         subtitleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.top.equalTo(titleLabel.snp.bottom).offset(12)
         }
         
         logoImageView.snp.makeConstraints { make in
@@ -111,20 +94,27 @@ class StartViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
         
-        startButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(subtitleLabel.snp.bottom).offset(34)
-            make.height.equalTo(50)
-            make.leading.equalToSuperview().offset(100)
-            make.trailing.equalToSuperview().offset(-100)
-        }
+        NSLayoutConstraint.activate([
+            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            loginButton.widthAnchor.constraint(equalToConstant: 200),
+            loginButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        loginButton.addTarget(self, action: #selector(didTapLoginButton(_:)), for: .touchUpInside)
+    }
+    
+    deinit {
+        print("LoginViewController deinit")
+    }
+
+    @objc private func didTapLoginButton(_ sender: Any) {
+        didSendEventClosure?(.login)
     }
 }
 
-extension StartViewController {
+extension LoginViewController {
     enum Event {
-        case search
-        case fetchSchedule
-        case fetchMoney
+        case login
     }
 }
