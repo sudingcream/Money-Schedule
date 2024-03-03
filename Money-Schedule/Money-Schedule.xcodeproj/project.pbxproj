@@ -99,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				C5CA901F2B8DF25D004EE68C /* Application */,
-				C5CA90122B8DE393004EE68C /* Coordinator */,
 				C5CA90072B8DD52D004EE68C /* TabBar */,
 				C5CA8FFC2B8DCCF6004EE68C /* View */,
 				C5CA8FF92B8DCC6A004EE68C /* Extension */,
@@ -147,13 +146,6 @@
 				C5CA90462B90478E004EE68C /* CustomTabBar.swift */,
 			);
 			path = TabBar;
-			sourceTree = "<group>";
-		};
-		C5CA90122B8DE393004EE68C /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		C5CA901F2B8DF25D004EE68C /* Application */ = {
@@ -459,6 +451,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iOS.Money-Schedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -488,6 +483,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iOS.Money-Schedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

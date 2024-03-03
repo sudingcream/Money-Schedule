@@ -62,7 +62,8 @@ class ContactViewController: UIViewController, UITextFieldDelegate {
         )
         textField.borderStyle = .none
         textField.keyboardType = .phonePad
-        textField.backgroundColor = UIColor.clear
+        textField.placeholder = "010-0000-0000"
+        textField.textColor = .black
         textField.layer.cornerRadius = 12
         return textField
     }()
