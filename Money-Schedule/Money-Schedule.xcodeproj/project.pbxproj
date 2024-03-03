@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44B65D512B94B05A00AFC203 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B65D502B94B05A00AFC203 /* AgreementViewController.swift */; };
 		C5CA8FE42B8DCB6A004EE68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA8FE32B8DCB6A004EE68C /* AppDelegate.swift */; };
 		C5CA8FE62B8DCB6A004EE68C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA8FE52B8DCB6A004EE68C /* SceneDelegate.swift */; };
 		C5CA8FE82B8DCB6A004EE68C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA8FE72B8DCB6A004EE68C /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44B65D502B94B05A00AFC203 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		C5CA8FE02B8DCB6A004EE68C /* Money-Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money-Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5CA8FE32B8DCB6A004EE68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5CA8FE52B8DCB6A004EE68C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44B65D4F2B94B05100AFC203 /* Agreement */ = {
+			isa = PBXGroup;
+			children = (
+				44B65D502B94B05A00AFC203 /* AgreementViewController.swift */,
+			);
+			path = Agreement;
+			sourceTree = "<group>";
+		};
 		C5CA8FD72B8DCB6A004EE68C = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +136,7 @@
 		C5CA8FFC2B8DCCF6004EE68C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				44B65D4F2B94B05100AFC203 /* Agreement */,
 				C5CA90362B8F0B48004EE68C /* Connect */,
 				C5CA90332B8EFD36004EE68C /* Contact */,
 				C5CA902E2B8ED2FF004EE68C /* Start */,
@@ -272,6 +283,7 @@
 				C5CA904B2B9047C1004EE68C /* UIImage+.swift in Sources */,
 				C5CA901C2B8DEE13004EE68C /* MoneyViewController.swift in Sources */,
 				C5CA8FFE2B8DCDE5004EE68C /* StartViewController.swift in Sources */,
+				44B65D512B94B05A00AFC203 /* AgreementViewController.swift in Sources */,
 				C5CA90302B8ED30A004EE68C /* LoginViewController.swift in Sources */,
 				C5CA8FE82B8DCB6A004EE68C /* ViewController.swift in Sources */,
 				C5CA8FF82B8DCC61004EE68C /* UIColor+.swift in Sources */,
