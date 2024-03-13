@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 28)
-        label.text = "가게부와 스케쥴을\n공유해보세요"
+        label.text = "가계부와 스케쥴을\n공유해보세요"
         label.textAlignment = .center
         label.numberOfLines = 0
         label.textColor = .black
@@ -58,7 +58,6 @@ class LoginViewController: UIViewController {
         button.backgroundColor = .systemBlue
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 8.0
-        
         return button
     }()
     
