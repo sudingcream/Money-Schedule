@@ -15,8 +15,8 @@ class StartViewController: UIViewController {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 28)
-        label.text = "가게부와 스케쥴을\n공유해보세요"
+        label.font = UIFont.systemFont(ofSize: 28)
+        label.text = "가계부와 스케쥴을\n공유해보세요"
         label.textAlignment = .center
         label.numberOfLines = 0
         label.textColor = .black
