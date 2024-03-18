@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import GoogleSignIn
+import AuthenticationServices
 
 class LoginViewController: UIViewController {
 
@@ -14,22 +16,40 @@ class LoginViewController: UIViewController {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 28)
-        label.text = "가게부와 스케쥴을\n공유해보세요"
+        label.font = UIFont.boldSystemFont(ofSize: 26)
         label.textAlignment = .center
         label.numberOfLines = 0
         label.textColor = .black
+        
+        let attributedString = NSMutableAttributedString(
+            string: "가계부와 스케쥴을\n공유해보세요"
+        )
+        attributedString.addAttribute(
+            NSAttributedString.Key.kern,
+            value: CGFloat(-1),
+            range: NSRange(location: 0, length: attributedString.length)
+        )
+        label.attributedText = attributedString
         return label
     }()
     
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.text = "사랑하는 사람과\n일정 관리를 더욱 편리하게\n간편하고 신속하게 공유해볼까요?"
+        label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 3
         label.textAlignment = .center
         label.textColor = .lightGray
+        
+        let attributedString = NSMutableAttributedString(
+            string: "사랑하는 사람과\n일정 관리를 더욱 편리하게\n간편하고 신속하게 공유해볼까요?"
+        )
+        attributedString.addAttribute(
+            NSAttributedString.Key.kern,
+            value: CGFloat(-1),
+            range: NSRange(location: 0, length: attributedString.length)
+        )
+        label.attributedText = attributedString
         return label
     }()
     
@@ -51,14 +71,48 @@ class LoginViewController: UIViewController {
         return imageView
     }()
     
-    private let loginButton: UIButton = {
+    private let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 23
+        return stackView
+    }()
+    
+    private let googleLoginButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("시작하기 - loginview", for: .normal)
-        button.backgroundColor = .systemBlue
-        button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 8.0
-        
+        button.setImage(UIImage(named: "google"), for: .normal)
+        button.addTarget(
+            self,
+            action: #selector(googleLoginButtonTapped),
+            for: .touchUpInside
+        )
+        return button
+    }()
+    
+    private let appleLoginButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "Apple"), for: .normal)
+        button.addTarget(
+            self,
+            action: #selector(appleLoginButtonTapped),
+            for: .touchUpInside
+        )
+        return button
+    }()
+    
+    private let kakaoLoginButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "kakao"), for: .normal)
+        button.addTarget(
+            self,
+            action: #selector(kakaoLoginButtonTapped),
+            for: .touchUpInside
+        )
         return button
     }()
     
@@ -70,7 +124,11 @@ class LoginViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(subtitleLabel)
         view.addSubview(logoImageView)
-        view.addSubview(loginButton)
+        view.addSubview(stackView)
+
+        stackView.addArrangedSubview(googleLoginButton)
+        stackView.addArrangedSubview(appleLoginButton)
+        stackView.addArrangedSubview(kakaoLoginButton)
 
         backgroundImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
@@ -94,14 +152,11 @@ class LoginViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
         
-        NSLayoutConstraint.activate([
-            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            loginButton.widthAnchor.constraint(equalToConstant: 200),
-            loginButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-        loginButton.addTarget(self, action: #selector(didTapLoginButton(_:)), for: .touchUpInside)
+        stackView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.height.equalTo(42)
+            make.top.equalTo(subtitleLabel.snp.bottom).offset(40)
+        }
     }
     
     deinit {
@@ -116,5 +171,128 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     enum Event {
         case login
+    }
+}
+
+extension LoginViewController {
+    @objc func appleLoginButtonTapped() {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+               
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+    }
+}
+
+extension LoginViewController {
+    @objc func kakaoLoginButtonTapped() {
+        
+    }
+}
+
+// MARK: - Google Login
+extension LoginViewController {
+    // 기존 로그인 상태 확인
+    func checkLoginState() {
+        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+            if error != nil || user == nil {
+                print("로그인 한 상태가 아닙니다.")
+            } else {
+                guard let user = user else { return }
+                guard let profile = user.profile else { return }
+                self.googleLoginUserData(profile)
+            }
+        }
+    }
+    
+    // Google Login
+    @objc func googleLoginButtonTapped() {
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
+            guard error == nil else {
+                let popup = UIAlertController(
+                    title: "로그인 실패",
+                    message: "다시 로그인해주세요.",
+                    preferredStyle: .alert
+                )
+                let action = UIAlertAction(
+                    title: "확인",
+                    style: .default
+                )
+                popup.addAction(action)
+                self.present(popup, animated: true)
+                return
+            }
+            
+            guard let user = signInResult?.user else { return }
+            guard let profile = user.profile else { return }
+            self.googleLoginUserData(profile)
+        }
+    }
+    
+    // 구글 유저 데이터 전달
+    func googleLoginUserData(_ profile: GIDProfileData) {
+        let customTabBarController = CustomTabBarController()
+        customTabBarController.modalPresentationStyle = .fullScreen
+        self.present(
+            customTabBarController,
+            animated: true,
+            completion: nil
+        )
+        let emailAddress = profile.email
+        let userName = profile.name
+    }
+}
+
+extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding{
+  func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
+
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        switch authorization.credential {
+        case let appleIDCredential as ASAuthorizationAppleIDCredential:
+            // You can create an account in your system.
+            let userIdentifier = appleIDCredential.user
+            let fullName = appleIDCredential.fullName
+            let email = appleIDCredential.email
+            
+            if  let authorizationCode = appleIDCredential.authorizationCode,
+                let identityToken = appleIDCredential.identityToken,
+                let authCodeString = String(data: authorizationCode, encoding: .utf8),
+                let identifyTokenString = String(data: identityToken, encoding: .utf8) {
+                print("authorizationCode: \(authorizationCode)")
+                print("identityToken: \(identityToken)")
+                print("authCodeString: \(authCodeString)")
+                print("identifyTokenString: \(identifyTokenString)")
+            }
+            
+            print("useridentifier: \(userIdentifier)")
+            print("fullName: \(fullName)")
+            print("email: \(email)")
+            
+            // 로그인 성공시 메인 페이지로
+            let customTabBarController = CustomTabBarController()
+            customTabBarController.modalPresentationStyle = .fullScreen
+            present(customTabBarController, animated: true, completion: nil)
+            
+        case let passwordCredential as ASPasswordCredential:
+            let username = passwordCredential.user
+            let password = passwordCredential.password
+            
+            print("username: \(username)")
+            print("password: \(password)")
+            
+        default:
+            break
+        }
+    }
+    
+
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        // 로그인 실패(유저의 취소도 포함)
+        print("login failed - \(error.localizedDescription)")
     }
 }

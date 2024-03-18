@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4462C0912BA18F860004B9B1 /* ConnectSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4462C0902BA18F860004B9B1 /* ConnectSuccessViewController.swift */; };
+		446A77472BA1811800017A71 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 446A77462BA1811800017A71 /* FirebaseAnalytics */; };
+		446A77492BA1811800017A71 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 446A77482BA1811800017A71 /* FirebaseAnalyticsOnDeviceConversion */; };
+		446A774B2BA1811800017A71 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 446A774A2BA1811800017A71 /* FirebaseAnalyticsSwift */; };
+		446A774D2BA1811800017A71 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 446A774C2BA1811800017A71 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		446A774F2BA1811800017A71 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 446A774E2BA1811800017A71 /* FirebaseAppCheck */; };
+		446A77522BA1812200017A71 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 446A77512BA1812200017A71 /* GoogleSignIn */; };
+		446A77542BA1812200017A71 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 446A77532BA1812200017A71 /* GoogleSignInSwift */; };
 		44B65D512B94B05A00AFC203 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B65D502B94B05A00AFC203 /* AgreementViewController.swift */; };
 		C5CA8FE42B8DCB6A004EE68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA8FE32B8DCB6A004EE68C /* AppDelegate.swift */; };
 		C5CA8FE62B8DCB6A004EE68C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA8FE52B8DCB6A004EE68C /* SceneDelegate.swift */; };
@@ -38,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4462C0902BA18F860004B9B1 /* ConnectSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectSuccessViewController.swift; sourceTree = "<group>"; };
+		4462C0922BA191990004B9B1 /* Money-Schedule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Money-Schedule.entitlements"; sourceTree = "<group>"; };
 		44B65D502B94B05A00AFC203 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		C5CA8FE02B8DCB6A004EE68C /* Money-Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money-Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5CA8FE32B8DCB6A004EE68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,8 +82,15 @@
 			files = (
 				C5CA90522B9049A4004EE68C /* RxCocoa in Frameworks */,
 				C5CA90012B8DCE5D004EE68C /* SnapKit in Frameworks */,
+				446A77522BA1812200017A71 /* GoogleSignIn in Frameworks */,
+				446A77542BA1812200017A71 /* GoogleSignInSwift in Frameworks */,
+				446A77472BA1811800017A71 /* FirebaseAnalytics in Frameworks */,
+				446A77492BA1811800017A71 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				446A774B2BA1811800017A71 /* FirebaseAnalyticsSwift in Frameworks */,
 				C5CA90432B904378004EE68C /* FSCalendar in Frameworks */,
 				C5CA90062B8DCF80004EE68C /* Then in Frameworks */,
+				446A774D2BA1811800017A71 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				446A774F2BA1811800017A71 /* FirebaseAppCheck in Frameworks */,
 				C5CA90562B9049A4004EE68C /* RxRelay in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +125,7 @@
 		C5CA8FE22B8DCB6A004EE68C /* Money-Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				4462C0922BA191990004B9B1 /* Money-Schedule.entitlements */,
 				C5CA901F2B8DF25D004EE68C /* Application */,
 				C5CA90072B8DD52D004EE68C /* TabBar */,
 				C5CA8FFC2B8DCCF6004EE68C /* View */,
@@ -188,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				C5CA90372B8F0B7A004EE68C /* ConnectViewController.swift */,
+				4462C0902BA18F860004B9B1 /* ConnectSuccessViewController.swift */,
 			);
 			path = Connect;
 			sourceTree = "<group>";
@@ -214,6 +233,13 @@
 				C5CA90422B904378004EE68C /* FSCalendar */,
 				C5CA90512B9049A4004EE68C /* RxCocoa */,
 				C5CA90552B9049A4004EE68C /* RxRelay */,
+				446A77462BA1811800017A71 /* FirebaseAnalytics */,
+				446A77482BA1811800017A71 /* FirebaseAnalyticsOnDeviceConversion */,
+				446A774A2BA1811800017A71 /* FirebaseAnalyticsSwift */,
+				446A774C2BA1811800017A71 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				446A774E2BA1811800017A71 /* FirebaseAppCheck */,
+				446A77512BA1812200017A71 /* GoogleSignIn */,
+				446A77532BA1812200017A71 /* GoogleSignInSwift */,
 			);
 			productName = "Money-Schedule";
 			productReference = C5CA8FE02B8DCB6A004EE68C /* Money-Schedule.app */;
@@ -248,6 +274,8 @@
 				C5CA90042B8DCF80004EE68C /* XCRemoteSwiftPackageReference "Then" */,
 				C5CA90412B904378004EE68C /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				C5CA904C2B9049A4004EE68C /* XCRemoteSwiftPackageReference "RxSwift" */,
+				446A77452BA1811800017A71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				446A77502BA1812200017A71 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = C5CA8FE12B8DCB6A004EE68C /* Products */;
 			projectDirPath = "";
@@ -277,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5CA90402B90147B004EE68C /* CalendarViewController.swift in Sources */,
+				4462C0912BA18F860004B9B1 /* ConnectSuccessViewController.swift in Sources */,
 				C5CA90112B8DE2D2004EE68C /* AppCoordinator.swift in Sources */,
 				C5CA90382B8F0B7A004EE68C /* ConnectViewController.swift in Sources */,
 				C5CA901E2B8DEE3D004EE68C /* SettingViewController.swift in Sources */,
@@ -445,6 +474,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Money-Schedule/Money-Schedule.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 385Y9B45N8;
@@ -461,7 +491,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.iOS.Money-Schedule";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOSBetty.MoneySchedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -477,6 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Money-Schedule/Money-Schedule.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 385Y9B45N8;
@@ -493,7 +524,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.iOS.Money-Schedule";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOSBetty.MoneySchedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -528,6 +559,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		446A77452BA1811800017A71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.22.1;
+			};
+		};
+		446A77502BA1812200017A71 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		C5CA8FFF2B8DCE5D004EE68C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -563,6 +610,41 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		446A77462BA1811800017A71 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 446A77452BA1811800017A71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		446A77482BA1811800017A71 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 446A77452BA1811800017A71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		446A774A2BA1811800017A71 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 446A77452BA1811800017A71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		446A774C2BA1811800017A71 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 446A77452BA1811800017A71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		446A774E2BA1811800017A71 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 446A77452BA1811800017A71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		446A77512BA1812200017A71 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 446A77502BA1812200017A71 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		446A77532BA1812200017A71 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 446A77502BA1812200017A71 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
 		C5CA90002B8DCE5D004EE68C /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C5CA8FFF2B8DCE5D004EE68C /* XCRemoteSwiftPackageReference "SnapKit" */;
