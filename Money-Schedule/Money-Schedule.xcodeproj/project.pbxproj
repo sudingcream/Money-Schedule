@@ -16,6 +16,7 @@
 		446A77522BA1812200017A71 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 446A77512BA1812200017A71 /* GoogleSignIn */; };
 		446A77542BA1812200017A71 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 446A77532BA1812200017A71 /* GoogleSignInSwift */; };
 		44B65D512B94B05A00AFC203 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B65D502B94B05A00AFC203 /* AgreementViewController.swift */; };
+		C597EB302BA83990002B8FD3 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C597EB2F2BA83990002B8FD3 /* UIButton+.swift */; };
 		C5CA8FE42B8DCB6A004EE68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA8FE32B8DCB6A004EE68C /* AppDelegate.swift */; };
 		C5CA8FE62B8DCB6A004EE68C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA8FE52B8DCB6A004EE68C /* SceneDelegate.swift */; };
 		C5CA8FE82B8DCB6A004EE68C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA8FE72B8DCB6A004EE68C /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 		4462C0902BA18F860004B9B1 /* ConnectSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectSuccessViewController.swift; sourceTree = "<group>"; };
 		4462C0922BA191990004B9B1 /* Money-Schedule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Money-Schedule.entitlements"; sourceTree = "<group>"; };
 		44B65D502B94B05A00AFC203 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
+		C597EB2F2BA83990002B8FD3 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		C5CA8FE02B8DCB6A004EE68C /* Money-Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money-Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5CA8FE32B8DCB6A004EE68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5CA8FE52B8DCB6A004EE68C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 			path = Agreement;
 			sourceTree = "<group>";
 		};
+		C597EB312BAA8743002B8FD3 /* Money */ = {
+			isa = PBXGroup;
+			children = (
+				C5CA901B2B8DEE13004EE68C /* MoneyViewController.swift */,
+			);
+			path = Money;
+			sourceTree = "<group>";
+		};
 		C5CA8FD72B8DCB6A004EE68C = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +157,7 @@
 				C5CA8FF72B8DCC61004EE68C /* UIColor+.swift */,
 				C5CA90482B9047AC004EE68C /* UIControl+.swift */,
 				C5CA904A2B9047C1004EE68C /* UIImage+.swift */,
+				C597EB2F2BA83990002B8FD3 /* UIButton+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -154,13 +165,13 @@
 		C5CA8FFC2B8DCCF6004EE68C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C597EB312BAA8743002B8FD3 /* Money */,
 				44B65D4F2B94B05100AFC203 /* Agreement */,
 				C5CA90362B8F0B48004EE68C /* Connect */,
 				C5CA90332B8EFD36004EE68C /* Contact */,
 				C5CA902E2B8ED2FF004EE68C /* Start */,
 				C5CA8FFD2B8DCDE5004EE68C /* StartViewController.swift */,
 				C5CA90172B8DE9CA004EE68C /* HomeViewController.swift */,
-				C5CA901B2B8DEE13004EE68C /* MoneyViewController.swift */,
 				C5CA901D2B8DEE3D004EE68C /* SettingViewController.swift */,
 				C5CA903F2B90147B004EE68C /* CalendarViewController.swift */,
 			);
@@ -323,6 +334,7 @@
 				C5CA90472B90478E004EE68C /* CustomTabBar.swift in Sources */,
 				C5CA8FE42B8DCB6A004EE68C /* AppDelegate.swift in Sources */,
 				C5CA90182B8DE9CA004EE68C /* HomeViewController.swift in Sources */,
+				C597EB302BA83990002B8FD3 /* UIButton+.swift in Sources */,
 				C5CA90452B90472E004EE68C /* TabItem.swift in Sources */,
 				C5CA8FE62B8DCB6A004EE68C /* SceneDelegate.swift in Sources */,
 			);

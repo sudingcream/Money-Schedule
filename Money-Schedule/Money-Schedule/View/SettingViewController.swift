@@ -82,10 +82,16 @@ class SettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLayout()
+        setupConfigure()
     }
     
-    private func setupLayout() {
+    private func setupConfigure() {
+        
+        tabBarItem = UITabBarItem(
+            title: "설정",
+            image: UIImage(named: "gearshape.fill"),
+            selectedImage: UIImage(named: "gearshape.fill")
+        )
         
         view.backgroundColor = .white
         view.addSubview(viewtitleLabel)
