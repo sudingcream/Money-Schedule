@@ -194,7 +194,7 @@ class ConnectViewController: UIViewController {
     private let startButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("확인", for: .normal)
+        button.setTitle("연결하기", for: .normal)
         button.backgroundColor = UIColor(hex: "23AA49", alpha: 1.0)
         button.titleLabel?.textColor = .white
         button.layer.cornerRadius = 18
@@ -207,7 +207,7 @@ class ConnectViewController: UIViewController {
     }()
     
     @objc func startButtonTapped() {
-        let customTabBarController = CustomTabBarController()
+        let customTabBarController = ConnectSuccessViewController()
         customTabBarController.modalPresentationStyle = .fullScreen
         self.present(
             customTabBarController,
