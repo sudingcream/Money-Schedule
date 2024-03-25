@@ -68,10 +68,10 @@ class StartViewController: UIViewController {
     }()
     
     @objc func startButtonTapped() {
-        let contactViewController = ContactViewController()
-        contactViewController.modalPresentationStyle = .fullScreen
+        let connectViewController = ConnectViewController()
+        connectViewController.modalPresentationStyle = .fullScreen
         self.present(
-            contactViewController,
+            connectViewController,
             animated: true,
             completion: nil
         )

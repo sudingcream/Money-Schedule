@@ -17,6 +17,7 @@
 		446A77542BA1812200017A71 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 446A77532BA1812200017A71 /* GoogleSignInSwift */; };
 		44B65D512B94B05A00AFC203 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B65D502B94B05A00AFC203 /* AgreementViewController.swift */; };
 		C597EB302BA83990002B8FD3 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C597EB2F2BA83990002B8FD3 /* UIButton+.swift */; };
+		C5B0B3032BAC1F3D00882552 /* AddSpendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0B3022BAC1F3D00882552 /* AddSpendingViewController.swift */; };
 		C5CA8FE42B8DCB6A004EE68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA8FE32B8DCB6A004EE68C /* AppDelegate.swift */; };
 		C5CA8FE62B8DCB6A004EE68C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA8FE52B8DCB6A004EE68C /* SceneDelegate.swift */; };
 		C5CA8FE82B8DCB6A004EE68C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA8FE72B8DCB6A004EE68C /* ViewController.swift */; };
@@ -44,6 +45,12 @@
 		C5CA904B2B9047C1004EE68C /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CA904A2B9047C1004EE68C /* UIImage+.swift */; };
 		C5CA90522B9049A4004EE68C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C5CA90512B9049A4004EE68C /* RxCocoa */; };
 		C5CA90562B9049A4004EE68C /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = C5CA90552B9049A4004EE68C /* RxRelay */; };
+		C5CE036B2BABB84C002EFF0B /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C5CE03652BABB849002EFF0B /* NotoSansKR-Medium.otf */; };
+		C5CE036C2BABB84C002EFF0B /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = C5CE03662BABB849002EFF0B /* NotoSansKR-Black.otf */; };
+		C5CE036D2BABB84C002EFF0B /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C5CE03672BABB84A002EFF0B /* NotoSansKR-Bold.otf */; };
+		C5CE036E2BABB84C002EFF0B /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C5CE03682BABB84B002EFF0B /* NotoSansKR-Light.otf */; };
+		C5CE036F2BABB84C002EFF0B /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C5CE03692BABB84B002EFF0B /* NotoSansKR-Regular.otf */; };
+		C5CE03702BABB84C002EFF0B /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = C5CE036A2BABB84C002EFF0B /* NotoSansKR-Thin.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +58,7 @@
 		4462C0922BA191990004B9B1 /* Money-Schedule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Money-Schedule.entitlements"; sourceTree = "<group>"; };
 		44B65D502B94B05A00AFC203 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		C597EB2F2BA83990002B8FD3 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		C5B0B3022BAC1F3D00882552 /* AddSpendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpendingViewController.swift; sourceTree = "<group>"; };
 		C5CA8FE02B8DCB6A004EE68C /* Money-Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money-Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5CA8FE32B8DCB6A004EE68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5CA8FE52B8DCB6A004EE68C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +83,12 @@
 		C5CA90462B90478E004EE68C /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		C5CA90482B9047AC004EE68C /* UIControl+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+.swift"; sourceTree = "<group>"; };
 		C5CA904A2B9047C1004EE68C /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		C5CE03652BABB849002EFF0B /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		C5CE03662BABB849002EFF0B /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
+		C5CE03672BABB84A002EFF0B /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		C5CE03682BABB84B002EFF0B /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
+		C5CE03692BABB84B002EFF0B /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		C5CE036A2BABB84C002EFF0B /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				C5CA901B2B8DEE13004EE68C /* MoneyViewController.swift */,
+				C5B0B3022BAC1F3D00882552 /* AddSpendingViewController.swift */,
 			);
 			path = Money;
 			sourceTree = "<group>";
@@ -135,6 +150,7 @@
 		C5CA8FE22B8DCB6A004EE68C /* Money-Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				C5CE03642BABB4E6002EFF0B /* Utils */,
 				4462C0922BA191990004B9B1 /* Money-Schedule.entitlements */,
 				C5CA901F2B8DF25D004EE68C /* Application */,
 				C5CA90072B8DD52D004EE68C /* TabBar */,
@@ -222,6 +238,19 @@
 			path = Connect;
 			sourceTree = "<group>";
 		};
+		C5CE03642BABB4E6002EFF0B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C5CE03662BABB849002EFF0B /* NotoSansKR-Black.otf */,
+				C5CE03672BABB84A002EFF0B /* NotoSansKR-Bold.otf */,
+				C5CE03682BABB84B002EFF0B /* NotoSansKR-Light.otf */,
+				C5CE03652BABB849002EFF0B /* NotoSansKR-Medium.otf */,
+				C5CE03692BABB84B002EFF0B /* NotoSansKR-Regular.otf */,
+				C5CE036A2BABB84C002EFF0B /* NotoSansKR-Thin.otf */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -302,8 +331,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5CE03702BABB84C002EFF0B /* NotoSansKR-Thin.otf in Resources */,
+				C5CE036B2BABB84C002EFF0B /* NotoSansKR-Medium.otf in Resources */,
 				C5CA8FF02B8DCB6C004EE68C /* LaunchScreen.storyboard in Resources */,
+				C5CE036E2BABB84C002EFF0B /* NotoSansKR-Light.otf in Resources */,
 				C5CA8FED2B8DCB6C004EE68C /* Assets.xcassets in Resources */,
+				C5CE036C2BABB84C002EFF0B /* NotoSansKR-Black.otf in Resources */,
+				C5CE036D2BABB84C002EFF0B /* NotoSansKR-Bold.otf in Resources */,
+				C5CE036F2BABB84C002EFF0B /* NotoSansKR-Regular.otf in Resources */,
 				C5CA8FEB2B8DCB6A004EE68C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +354,7 @@
 				4462C0912BA18F860004B9B1 /* ConnectSuccessViewController.swift in Sources */,
 				C5CA90112B8DE2D2004EE68C /* AppCoordinator.swift in Sources */,
 				C5CA90382B8F0B7A004EE68C /* ConnectViewController.swift in Sources */,
+				C5B0B3032BAC1F3D00882552 /* AddSpendingViewController.swift in Sources */,
 				C5CA901E2B8DEE3D004EE68C /* SettingViewController.swift in Sources */,
 				C5CA904B2B9047C1004EE68C /* UIImage+.swift in Sources */,
 				C5CA901C2B8DEE13004EE68C /* MoneyViewController.swift in Sources */,

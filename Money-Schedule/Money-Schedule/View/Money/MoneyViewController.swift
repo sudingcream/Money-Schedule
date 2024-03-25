@@ -31,8 +31,19 @@ class MoneyViewController: UIViewController {
     private let addButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "plus"), for: .normal)
+        button.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         return button
     }()
+    
+    @objc func addButtonTapped() {
+        let addSpendingViewController = AddSpendingViewController()
+        addSpendingViewController.modalPresentationStyle = .fullScreen
+        self.present(
+            addSpendingViewController,
+            animated: true,
+            completion: nil
+        )
+    }
     
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -41,18 +52,91 @@ class MoneyViewController: UIViewController {
         return searchBar
     }()
     
-    
-    private lazy var thisMonthtitleLabel: UILabel = {
+    private lazy var thismonthIncomeTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "이번달 지출 금액 : 434,230원"
+        label.font = UIFont(name: "NotoSansKR-Thin", size: 11)
         label.numberOfLines = 0
-        label.textAlignment = .right
-        label.textColor = .black
+        label.textAlignment = .left
+        
+        let text = "이번달 수입 : "
+        let attributedString = NSMutableAttributedString(string: text)
+        attributedString.addAttribute(
+            .kern,
+            value: CGFloat(-1),
+            range: NSRange(location: 0, length: attributedString.length)
+        )
+        
+        label.attributedText = attributedString
+        label.textColor = UIColor(hex: "77757F")
         return label
     }()
     
+    private lazy var thismonthIncomeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "NotoSansKR-Thin", size: 11)
+        label.numberOfLines = 0
+        label.textAlignment = .left
+        
+        let text = "461,000원"
+        let attributedString = NSMutableAttributedString(string: text)
+        attributedString.addAttribute(
+            .kern,
+            value: CGFloat(-1),
+            range: NSRange(location: 0, length: attributedString.length)
+        )
+        
+        label.attributedText = attributedString
+        label.textColor = UIColor(hex: "23AA49")
+        return label
+    }()
+    
+    private lazy var thismonthSpendingTitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.textAlignment = .left
+        
+        let text = "이번달 지출 : "
+        let attributedString = NSMutableAttributedString(string: text)
+        attributedString.addAttribute(
+            .kern,
+            value: CGFloat(-1),
+            range: NSRange(location: 0, length: attributedString.length)
+        )
+        
+        label.attributedText = attributedString
+        label.font = UIFont(name: "NotoSansKR-Thin", size: 11)
+        label.textColor = UIColor(hex: "77757F")
+        return label
+    }()
+    private lazy var thismonthSpendingLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.textAlignment = .left
+        
+        let text = "43,300원"
+        let attributedString = NSMutableAttributedString(string: text)
+        attributedString.addAttribute(
+            .kern,
+            value: CGFloat(-1),
+            range: NSRange(location: 0, length: attributedString.length)
+        )
+        
+        label.attributedText = attributedString
+        label.font = UIFont(name: "NotoSansKR-Thin", size: 11)
+        label.textColor = UIColor(hex: "FF6D6D")
+        return label
+    }()
+
+    private lazy var dividerLine: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor(hex: "E9E6E6", alpha: 1.0)
+        return view
+    }()
     private var calendar: FSCalendar = {
         let calendar = FSCalendar()
         calendar.translatesAutoresizingMaskIntoConstraints = false
@@ -79,7 +163,11 @@ class MoneyViewController: UIViewController {
 //        view.addSubview(searchButton)
         view.addSubview(addButton)
         view.addSubview(calendar)
-        view.addSubview(thisMonthtitleLabel)
+        view.addSubview(thismonthIncomeTitleLabel)
+        view.addSubview(thismonthSpendingTitleLabel)
+        view.addSubview(thismonthIncomeLabel)
+        view.addSubview(thismonthSpendingLabel)
+        view.addSubview(dividerLine)
         
         viewtitleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -96,17 +184,34 @@ class MoneyViewController: UIViewController {
             make.top.equalToSuperview().offset(70)
             make.right.equalTo(view.snp.right).offset(-24)
         }
- 
+        thismonthIncomeTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(viewtitleLabel.snp.bottom).offset(40)
+            make.right.equalToSuperview().offset(-100)
+        }
+        
+        thismonthIncomeLabel.snp.makeConstraints { make in
+            make.top.equalTo(viewtitleLabel.snp.bottom).offset(40)
+            make.right.equalToSuperview().offset(-14)
+        }
+        
+        thismonthSpendingTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(thismonthIncomeTitleLabel.snp.bottom).offset(22)
+            make.right.equalToSuperview().offset(-100)
+        }
+        thismonthSpendingLabel.snp.makeConstraints { make in
+            make.top.equalTo(thismonthIncomeTitleLabel.snp.bottom).offset(22)
+            make.right.equalToSuperview().offset(-14)
+        }
+        dividerLine.snp.makeConstraints { make in
+            make.top.equalTo(thismonthSpendingLabel.snp.bottom).offset(14)
+            make.height.equalTo(1)
+            make.left.right.equalToSuperview()
+        }
         calendar.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(25)
             make.trailing.equalToSuperview().offset(-25)
-            make.top.equalToSuperview().offset(215)
+            make.top.equalTo(dividerLine.snp.bottom).offset(40)
             make.height.equalTo(400)
-        }
-        
-        thisMonthtitleLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(calendar.snp.bottom).offset(24)
-            make.trailing.equalToSuperview().offset(-25)
         }
     }
 }

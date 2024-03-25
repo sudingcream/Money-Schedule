@@ -27,12 +27,12 @@ class CustomTabBarController: UITabBarController {
         let moneyVC = MoneyViewController()
         moneyVC.tabBarItem.title = "가계부"
         moneyVC.tabBarItem.image = UIImage(systemName: "creditcard.fill")
-        moneyVC.tabBarItem.selectedImage = UIImage(systemName: "gearshape.fill")
+        moneyVC.tabBarItem.selectedImage = UIImage(systemName: "creditcard.fill")
         
         let calendarVC = CalendarViewController()
         calendarVC.tabBarItem.title = "일정"
         calendarVC.tabBarItem.image = UIImage(systemName: "calendar")
-        calendarVC.tabBarItem.selectedImage = UIImage(systemName: "gearshape.fill")
+        calendarVC.tabBarItem.selectedImage = UIImage(systemName: "calendar")
         
         let settingVC = SettingViewController()
         settingVC.tabBarItem.title = "설정"
