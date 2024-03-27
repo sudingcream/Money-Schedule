@@ -52,6 +52,66 @@ class AddSpendingViewController: UIViewController {
         label.attributedText = attributedString
         return label
     }()
+   
+    private lazy var calendarLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "NotoSansKR-Thin", size: 18)
+        label.numberOfLines = 0
+        label.textAlignment = .right
+        label.textColor = UIColor.gray
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "yyyy년 M월 d일 EEEE"
+        let dateString = dateFormatter.string(from: Date())
+        
+        let attributedString = NSMutableAttributedString(string: dateString)
+        attributedString.addAttribute(
+            .kern,
+            value: CGFloat(-1),
+            range: NSRange(location: 0, length: attributedString.length)
+        )
+        
+        label.attributedText = attributedString
+        return label
+    }()
+    
+    @objc private func datePickerValueChanged(_ sender: UIDatePicker) {
+        calendarLabel.text = dateFormat(date: sender.date)
+    }
+    
+    private lazy var calendarSelectedButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(calendarSelectedButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func calendarSelectedButtonTapped() {
+        showDatePickerPopup()
+    }
+    
+    private func showDatePicker() {
+        view.addSubview(datePicker)
+        
+        datePicker.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(priceLine.snp.bottom).offset(50)
+        }
+    }
+    private func hideDatePicker() {
+        datePicker.isHidden = true
+        datePicker.removeFromSuperview()
+    }
+    private lazy var datePicker: UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .date
+        picker.preferredDatePickerStyle = .wheels
+        picker.locale = Locale(identifier: "ko-KR")
+        picker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
+        return picker
+    }()
     private lazy var calendarLine: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -93,11 +153,11 @@ class AddSpendingViewController: UIViewController {
     private lazy var wontitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont(name: "NotoSansKR-Thin", size: 18)
         label.text = "원"
         label.numberOfLines = 0
         label.textAlignment = .right
-        label.textColor = .black
+        label.textColor = .gray
         return label
     }()
     private lazy var priceLine: UIView = {
@@ -133,6 +193,7 @@ class AddSpendingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupConfigure()
+        setupTapGesture()
     }
     
     private func setupConfigure() {
@@ -141,6 +202,8 @@ class AddSpendingViewController: UIViewController {
         view.addSubview(viewtitleLabel)
         
         view.addSubview(calendarTitleLabel)
+        view.addSubview(calendarLabel)
+        view.addSubview(calendarSelectedButton)
         view.addSubview(calendarLine)
         
         view.addSubview(priceTitleLabel)
@@ -167,6 +230,16 @@ class AddSpendingViewController: UIViewController {
         calendarTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(viewtitleLabel.snp.top).offset(70)
             make.left.equalToSuperview().offset(30)
+        }
+        calendarLabel.snp.makeConstraints { make in
+            make.right.equalToSuperview().offset(-35)
+            make.top.equalTo(calendarTitleLabel.snp.bottom).offset(9)
+        }
+        calendarSelectedButton.snp.makeConstraints { make in
+            make.right.equalToSuperview().offset(-35)
+            make.left.equalToSuperview().offset(35)
+            make.top.equalTo(calendarTitleLabel.snp.bottom).offset(9)
+            make.bottom.equalTo(calendarLine.snp.top)
         }
         calendarLine.snp.makeConstraints { make in
             make.top.equalTo(calendarTitleLabel.snp.bottom).offset(49)
@@ -202,4 +275,77 @@ class AddSpendingViewController: UIViewController {
             make.bottom.equalToSuperview().offset(-50)
         }
     }
+}
+
+extension AddSpendingViewController {
+    private func setupDatePicker() {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.locale = Locale(identifier: "ko-KR")
+        datePicker.addTarget(self, action: #selector(dateChange), for: .valueChanged)
+        calendarLabel.text = dateFormat(date: Date())
+    }
+    
+    @objc func dateChange(_ sender: UIDatePicker) {
+        calendarLabel.text = dateFormat(date: sender.date)
+    }
+
+    private func dateFormat(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy년 MM월 dd일"
+        
+        return formatter.string(from: date)
+    }
+
+}
+
+extension AddSpendingViewController {
+    private func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
+    private func showDatePickerPopup() {
+        let dateChooserAlert = UIAlertController(
+            title: "날짜 선택",
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.locale = Locale(identifier: "ko_KO")
+        dateChooserAlert.view.addSubview(datePicker)
+        dateChooserAlert.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        
+        datePicker.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(dateChooserAlert.view.snp.top)
+            make.bottom.equalTo(dateChooserAlert.view.snp.bottom).offset(-30)
+        }
+        
+        dateChooserAlert.addAction(UIAlertAction(title: "선택 완료", style: .default, handler: { (action) in
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy년 MM월 dd일"
+            let selectedDate = datePicker.date
+            
+            let currentDate = Date()
+            let calendar = Calendar.current
+            let isToday = calendar.isDate(selectedDate, inSameDayAs: currentDate)
+            
+            var formattedDate = formatter.string(from: selectedDate)
+            if isToday {
+                formattedDate += " (오늘)"
+            }
+            
+            self.calendarLabel.text = formattedDate
+        }))
+        self.present(dateChooserAlert, animated: true, completion: nil)
+    }
+
 }
